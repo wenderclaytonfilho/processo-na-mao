@@ -8,28 +8,27 @@
   justify-content: space-between;
   align-items: center;
   z-index: 100;
-  background-color: black;
-}
 
-.logo {
-  font-size: 25px;
-  font-family: "Quicksand", sans-serif;
-  display: swap;
-  color: #b8c8f7;
-  text-decoration: none;
-  font-weight: 600;
-}
+  .logo {
+    font-size: 25px;
+    font-family: "Quicksand", sans-serif;
+    display: swap;
+    color: #b8c8f7;
+    text-decoration: none;
+    font-weight: 600;
+  }
 
-.navbar a {
-  font-size: 18px;
-  color: #ededed;
-  text-decoration: none;
-  margin-left: 35px;
-  font-weight: 500;
-  transition: 0.3s;
-}
+  .navbar a {
+    font-size: 18px;
+    color: #ededed;
+    text-decoration: none;
+    margin-left: 35px;
+    font-weight: 500;
+    transition: 0.3s;
 
-.navbar a:hover,
-.header a.active {
-  color: #fff;
+    &:hover,
+    .header a.active {
+      color: #fff;
+    }
+  }
 }
