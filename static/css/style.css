@@ -1,14 +1,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap");
+
 * {
   margin: 0;
   padding: 0;
   font-family: "Quicksand", sans-serif;
 }
 
-body {
-  background: url("../../img/teste1.jpg") no-repeat;
-  background-position: center;
-  background-size: cover;
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  background-color: black;
 }
 
 .header a.logo {
@@ -17,6 +25,7 @@ body {
   color: #b8c8f7;
   text-decoration: none;
 }
+
 .header .navbar a {
   font-size: 18px;
   color: #ededed;
@@ -25,7 +34,9 @@ body {
   font-weight: 500;
   transition: 0.3s;
 }
-.header .navbar a:hover, .header .navbar a.active {
+
+.header .navbar a:hover,
+.header .navbar a.active {
   color: #fff;
 }
 
@@ -35,9 +46,11 @@ section {
   align-items: center;
   min-height: 100vh;
   width: 100%;
+  background: url("../../img/teste1.jpg") no-repeat;
   background-position: center;
   background-size: cover;
 }
+
 section .form-box {
   position: relative;
   width: 400px;
@@ -51,31 +64,39 @@ section .form-box {
   justify-content: center;
   align-items: center;
 }
+
 section .form-box h2 {
   font-size: 2em;
   color: #fff;
   text-align: center;
 }
+
 section .form-box p {
   color: white;
   text-align: center;
 }
+
 section .form-box .inputbox {
   position: relative;
   margin: 30px 0;
   width: 310px;
   border-bottom: 2px solid #fff;
 }
+
 section .form-box .inputbox svg {
   position: absolute;
   top: 50%;
-  right: 10px; /* Adjust the right position for spacing */
+  right: 10px;
+  /* Adjust the right position for spacing */
   transform: translateY(-50%);
-  fill: white; /* Icon color */
+  fill: white;
+  /* Icon color */
 }
+
 section .form-box .inputbox label {
   position: absolute;
-  top: 50%; /* Align the label with the middle of the icon */
+  top: 50%;
+  /* Align the label with the middle of the icon */
   left: 5px;
   transform: translateY(-50%);
   color: #fff;
@@ -83,10 +104,12 @@ section .form-box .inputbox label {
   font-size: 1em;
   transition: 0.5s;
 }
-section .form-box .inputbox input:focus ~ label,
-section .form-box .inputbox input:valid ~ label {
+
+section .form-box .inputbox input:focus~label,
+section .form-box .inputbox input:valid~label {
   top: -5px;
 }
+
 section .form-box .inputbox input {
   width: 100%;
   height: 50px;
@@ -97,13 +120,18 @@ section .form-box .inputbox input {
   padding: 0 35px 0 5px;
   color: #fff;
 }
+
 section .form-box .inputbox input ion-icon {
   position: absolute;
-  right: 5px; /* Adjust the right position for better icon alignment */
-  color: #fff; /* Set the icon color to white */
+  right: 5px;
+  /* Adjust the right position for better icon alignment */
+  color: #fff;
+  /* Set the icon color to white */
   font-size: 1.2em;
-  top: 23px; /* Adjust the top position for better icon alignment */
+  top: 23px;
+  /* Adjust the top position for better icon alignment */
 }
+
 section .form-box button {
   width: 100%;
   height: 40px;
@@ -114,10 +142,12 @@ section .form-box button {
   cursor: pointer;
   font-size: 1em;
   font-weight: 600;
-  color: #fff; /* Cor do texto alterada */
+  color: #fff;
+  /* Cor do texto alterada */
   margin-top: 20px;
   transition: background 0.3s, color 0.3s;
 }
+
 section .form-box button:hover {
   background: #0b27c9;
 }
