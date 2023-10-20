@@ -22,7 +22,7 @@
 
     <section class="container section-confirm">
       <div class="form-box mx-auto">
-        <form>
+        <form method="post">
           <p class="p-0" style="margin-bottom: 10px;">Insira o código de
             confirmação </p>
 
@@ -37,10 +37,11 @@
             </svg>
             <input type="text"
               class=" d-flex justify-content-center text-center"
+              name="codigodeconfirmacao"
               required>
             <label for="email">Código de Confirmação</label>
           </div>
-          <button class>Confirmar</button>
+          <button class><a href="{{ url_for('confirmar') }}">Confirmar</a></button>
 
         </form>
       </div>
