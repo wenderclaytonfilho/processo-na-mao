@@ -2,6 +2,11 @@ import smtplib
 import email.message
 import random
 
+codigos = [
+
+]
+
+
 def enviar_email(mail,codigo):  
     corpo_email = """
     <p>Olá, segue o código de verificação</p>
@@ -27,8 +32,7 @@ def gerar_codigo():
     codigo = random.randint(0,9999)
     return codigo
 
-def verificar_codigo(codigo,codigorecebido):
-    if codigo == codigorecebido:
-        return True
-    else:
-        return False
+def verificar_codigo(codigorecebido):
+    print (codigorecebido)
+    if codigorecebido in codigos:
+        print("Código correto!")
