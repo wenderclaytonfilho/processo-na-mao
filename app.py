@@ -2,7 +2,6 @@ from flask import *
 from util import *
 
 app = Flask(__name__)
-codigoatual = 0
 @app.route("/", methods=['GET','POST'])
 def buscar_processo(name=None):
   if request.method == 'POST':
