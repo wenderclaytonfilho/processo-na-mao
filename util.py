@@ -14,7 +14,7 @@ def enviar_email(mail,codigo):
     """.format(codigo)
 
     msg = email.message.Message()
-    msg['Subject'] = "Assunto"
+    msg['Subject'] = "Código de confirmação!"
     msg['From'] = 'processonamao@gmail.com' #processonamao2802
     msg['To'] = mail
     password = 'ukxmzkwvdokdbkiw' 
