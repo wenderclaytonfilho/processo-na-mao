@@ -7,8 +7,9 @@ app = Flask(__name__)
 def buscar_processo(name=None):
   if request.method == 'POST':
     codigoGerado = gerar_codigo()
-    codigos.append(codigoGerado)
     email = request.form.get('email')
+    numero_do_processo = request.form.get('numeroprocesso')
+    get_processo_por_numero(numero_do_processo)
     enviar_email(email,codigoGerado)
     return redirect(url_for('confirmar'))
   return render_template('index.html',name=name)
@@ -16,10 +17,14 @@ def buscar_processo(name=None):
 @app.route("/confirmar", methods=['GET','POST'])
 def confirmar(name=None):
   codigoInserido = request.form.get('codigodeconfirmacao')
-  print(codigos)
   if request.method == 'POST':
     verificar_codigo(codigoInserido)
   return render_template('confirm.html',name=name)
+
+@app.route("/sucesso", methods=['GET'])
+def sucesso(name = None):
+  return "<p>Sucesso na operação!</p>"
+
 
 
 if __name__=="__main__":
