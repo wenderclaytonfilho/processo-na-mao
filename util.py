@@ -10,6 +10,10 @@ headers ={
     "Authorization": "APIKey cDZHYzlZa0JadVREZDJCendQbXY6SkJlTzNjLV9TRENyQk1RdnFKZGRQdw=="
 }
 
+codigos = [
+
+]
+
 def get_processo_por_numero(numerodoprocesso):
     response = requests.get(api_url,headers=headers)
     if response.status_code ==200:
@@ -17,6 +21,12 @@ def get_processo_por_numero(numerodoprocesso):
         print(data)
     else:
         print("Erro!")
+
+
+def checar_field(data):
+    if not data:
+        return False
+    return True
 
 
 def enviar_email(mail,codigo):  
@@ -51,6 +61,4 @@ def verificar_codigo(codigorecebido):
 
 
 def coletar_processo(numerodoprocesso):
-    
-    
     pass

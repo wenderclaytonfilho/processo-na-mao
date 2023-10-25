@@ -6,11 +6,13 @@ app = Flask(__name__)
 @app.route("/", methods=['GET','POST'])
 def buscar_processo(name=None):
   if request.method == 'POST':
-    codigoGerado = gerar_codigo()
     email = request.form.get('email')
     numero_do_processo = request.form.get('numeroprocesso')
     get_processo_por_numero(numero_do_processo)
-    enviar_email(email,codigoGerado)
+
+    codigoGerado = gerar_codigo() 
+    if checar_field(numero_do_processo):
+      enviar_email(email,codigoGerado)
     return redirect(url_for('confirmar'))
   return render_template('index.html',name=name)
 
