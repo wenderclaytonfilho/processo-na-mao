@@ -138,6 +138,8 @@ body {
   align-items: center;
   z-index: 1;
 }
+
+
 .popup .popup-content {
   background: #fff;
   border-radius: 5px;

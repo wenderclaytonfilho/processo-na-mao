@@ -2,25 +2,36 @@ import smtplib
 import email.message
 import random
 import requests
+import json
 
 
 api_key = 'cDZHYzlZa0JadVREZDJCendQbXY6SkJlTzNjLV9TRENyQk1RdnFKZGRQdw=='
 api_url = 'https://api-publica.datajud.cnj.jus.br/api_publica_trf1/_search'
+
 headers ={
-    "Authorization": "APIKey cDZHYzlZa0JadVREZDJCendQbXY6SkJlTzNjLV9TRENyQk1RdnFKZGRQdw=="
+    "Authorization": "APIKey cDZHYzlZa0JadVREZDJCendQbXY6SkJlTzNjLV9TRENyQk1RdnFKZGRQdw==",
+    'Content-Type': 'application/json'
 }
 
 codigos = [
 
 ]
 
+
+
 def get_processo_por_numero(numerodoprocesso):
-    response = requests.get(api_url,headers=headers)
-    if response.status_code ==200:
-        data = response.json()
-        print(data)
-    else:
-        print("Erro!")
+    payload = json.dumps({
+  "query": {
+    "match": {
+      "numeroProcesso": numerodoprocesso
+    }
+  }
+})
+    
+    response = requests.request('POST', api_url,headers=headers,data=payload)
+    dados = response.json()
+    print(dados)
+    
 
 
 def checar_field(data):
