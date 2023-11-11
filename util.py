@@ -19,6 +19,7 @@ codigos = [
 
 
 
+
 def get_processo_por_numero(numerodoprocesso):
     payload = json.dumps({
   "query": {
